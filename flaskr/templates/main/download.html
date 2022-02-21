@@ -1,0 +1,22 @@
+{% extends 'main/user_page.html' %}
+
+{% block title_variable %}
+    <h2 class="title-variable">Download</h2>
+    <hr>
+{% endblock %}
+
+{% block description %}
+    <p class="description">
+        Here you can provide url to download or upload an archive to a server and unpack it.
+    </p>
+{% endblock %}
+
+{% block content %}
+    <form class="download-form" method="post" enctype="multipart/form-data">
+        <label for="url" class="username-label">URL</label>
+        <input type="text" id="url" name="url" class="input-url">
+        <label for="file" class="password-label">Choose a file</label>
+        <input type="file" id="file" name="file" class="input">
+        <input type="submit" value="Download" class="button">
+    </form>
+{% endblock %}

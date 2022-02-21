@@ -1,0 +1,20 @@
+{% extends 'main/user_page.html' %}
+
+{% block title_variable %}
+    <h2 class="title-variable">Delete</h2>
+    <hr>
+{% endblock %}
+
+{% block description %}
+    <p class="description">
+        Delete the archive by ID
+    </p>
+{% endblock %}
+
+{% block content %}
+    <form class="form" method="post">
+        <label for="task_id" class="username-label">Archive ID</label>
+        <input type="text" id="task_id" name="task_id" class="input">
+        <input type="submit" value="Delete" class="button">
+    </form>
+{% endblock %}

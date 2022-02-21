@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}User page{% endblock %} Flaskr</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container-user-page">
+
+        <nav class="menu">
+            <h1>Flaskr</h1>
+            <ul class="reg-log">
+                <li><a href="{{ url_for('site_main.user_page', username=g.user['username']) }}">{{ g.user['username'] }}</a>
+                <li><a href="{{ url_for('site_main.user_files', username=g.user['username']) }}">My files</a></li>
+                <li><a href="{{ url_for('site_auth.logout') }}">Log out</a>
+            </ul>
+        </nav>
+
+        {% block title_variable %}
+            <h2 class="title-variable">Tools</h2>
+            <hr>
+        {% endblock %}
+
+        {% block description %}
+            <p class="description">
+                Here you can download then unpack and delete archives.
+                You also have an opportunity to track downloading and unpacking processes.
+            </p>
+        {% endblock %}
+
+        {% block content %}
+        <ul class="buttons-ul">
+            <li><a href="{{ url_for('site_main.download_archive') }}"><button type="button" class="tool-button">Download</button></a></li>
+            <li><a href="{{ url_for('site_main.delete') }}"><button type="button" class="tool-button">Delete</button></a></li>
+            <li><a href="{{ url_for('site_main.get_status') }}"><button type="button" class="tool-button">Track</button></a></li>
+        </ul>
+        {% endblock %}
+
+        {% for category, message in get_flashed_messages(with_categories=True) %}
+            <div class="flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+
+    </div>
+</body>
+
+</html>

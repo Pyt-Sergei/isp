@@ -1,0 +1,30 @@
+{% extends 'main/user_page.html' %}
+
+
+{% block title_variable %}
+    <h2 class="title-variable">Files</h2>
+    <hr>
+{% endblock %}
+
+{% block description %}
+    <p class="description">
+        Here is the list of your downloaded files.
+    </p>
+{% endblock %}
+
+{% block content %}
+    <div class="progress-bar">
+        <div class="progress-bar__item">Archives:</div>
+        {% for file in archives %}
+            <div class="progress-bar__item progress-bar__file">
+                <a href="{{ url_for('site_main.get_file_status', archive_id=file.id) }}" class="a-file">
+                    {{ file.id }} {{ file.size // 1024**2 }}MB  {{ file.date }}
+                </a>
+                <a class="delete-href" href="{{ url_for('site_main.delete_get', archive_id=file.id) }}">Delete</a>
+            </div>
+        {% endfor %}
+        <a href="{{ url_for('site_main.get_status') }}"><button type="button" class="file-button">Track</button></a>
+    </div>
+
+
+{% endblock %}

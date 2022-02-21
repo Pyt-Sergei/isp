@@ -1,0 +1,237 @@
+body{
+
+}
+
+.container {
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+    border: 20px #eee solid;
+    font-family: sans-serif;
+}
+
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: lightgrey;
+    color: #377ba8;
+    height: 20px;
+}
+
+.reg-log {
+    display: flex;
+    list-style: none;
+}
+
+.reg-log li {
+    padding-left: 10px;
+}
+
+a {
+    color: #377ba8;
+    transition: red;
+}
+a:active {
+    color: red;
+}
+
+
+.reg-log li:visited{
+    color: #377ba8;
+}
+
+.title-variable{
+    margin: 0;
+    padding: 20px 10px 5px 20px;
+    color: #377ba8;
+}
+
+hr{
+    border: none;
+    border-top: 1px solid lightgray;
+    margin: 0 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px ;
+}
+
+.form label{
+    font-weight: 800;
+    margin-bottom: 0.5em;
+}
+
+.form input{
+    margin-bottom: 1em ;
+    border: 1px #377ba8 solid ;
+}
+
+.input{
+    border-radius: 4px;
+    height: 25px;
+}
+
+.button{
+    width: 130px;
+    height: 20px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.button:active{
+    background-color: #377ba8;
+    color: white;
+}
+
+.welcome{
+    text-align: center;
+    padding: 20px;
+}
+
+.container-user-page {
+    min-width: 400px;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 20px;
+    border: 20px #eee solid;
+    font-family: sans-serif;
+}
+
+.description{
+    padding: 0 20px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.buttons-ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 10px 0 0 0;
+}
+
+.buttons-ul li{
+    margin-bottom: 20px;
+}
+
+.tool-button{
+    background-color: lightgray ;
+    border-color: white;
+    border-radius: 70% ;
+    width: 150px;
+    height: 30px;
+    color: #377ba8;
+    font-weight: 800;
+    font-size: 1em;
+}
+
+.download-form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px ;
+}
+
+.download-form label{
+    font-weight: 800;
+    margin-bottom: 0.5em;
+}
+
+.download-form input{
+    margin-bottom: 1em ;
+}
+
+.input-url, .button{
+    border: 1px #377ba8 solid;
+    border-radius: 4px;
+    height: 25px;
+}
+
+.flash-message {
+    margin: 15px 0;
+    padding: 20px;
+    background: #cae6f6;
+    border: 1px solid #377ba8;
+    font-family: New, monospace, Garamond, Georgia, Times New Roman, serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: purple;
+    border-right: none;
+    border-left: none;
+}
+
+.flash-error{
+    margin: 15px 0;
+    padding: 20px;
+    background: #cae6f6;
+    border: 1px solid #377ba8;
+    font-family: Courier New, monospace, Garamond, Georgia, Times New Roman, serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: red;
+    border-right: none;
+    border-left: none;
+}
+
+.progress-bar{
+    flex-direction: column;
+    margin: 10px 20px;
+    padding: 10px 20px ;
+    background-color: #F9EFF6;
+    font-size: 14px;
+    font-family: Courier New, monospace, Georgia, Times New Roman, serif;
+    font-style: italic;
+    border-radius: 4px;
+}
+
+.progress-bar__item{
+    margin: 10px 0;
+    max-width: 800px;
+}
+
+.id-span{
+    display: block;
+    word-break:break-all;
+}
+
+.progress-bar__file{
+    font-style: italic;
+    text-decoration: underline;
+    color: #454545;
+}
+
+.a-file {
+    color: #454545;
+}
+
+.a-file:active {
+    color: red;
+}
+
+.file-button{
+    width: 130px;
+    height: 20px;
+    border-radius: 3px;
+    border: none;
+    background-color: lightgrey;
+    color: #454545;
+}
+
+.file-button:active{
+    background-color: #377ba8;
+    color: white;
+}
+
+.delete-href{
+    margin-left:20px;
+}
+
+
+
+

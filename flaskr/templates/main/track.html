@@ -1,0 +1,48 @@
+{% extends 'main/user_page.html' %}
+
+
+{% block title_variable %}
+    <h2 class="title-variable">Tracking</h2>
+    <hr>
+{% endblock %}
+
+{% block description %}
+    <p class="description">
+        You can see the progress bar for your downloads providing its id.
+    </p>
+{% endblock %}
+
+{% block content %}
+    <form class="form" method="post">
+        <label for="task_id" class="username-label">Archive ID</label>
+        <input type="text" id="task_id" name="task_id" class="input">
+        <input type="submit" value="Track" class="button">
+    </form>
+
+    {% if response %}
+    <div class="progress-bar">
+
+        <div class="progress-bar__item">ID: <span class="id-span">{{ response['task_id'] }}</span></div>
+
+        {% if response.get('status') %}
+        <div class="progress-bar__item">status: {{ response['status'] }}</div><br>
+        {% endif %}
+
+        {% if response.get('PROGRESS')%}
+        <div class="progress-bar__item">progress: {{ response['PROGRESS'] }}</div>
+        {% endif %}
+
+        {% if response['status'] == 'ok' %}
+            <span>Files:</span>
+            {% for file in response['files'] %}
+                <div class="progress-bar__item progress-bar__file">{{ file }}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    {% endif %}
+
+{% endblock %}
+
+
+
+

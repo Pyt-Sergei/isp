@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %} Flaskr</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <nav class="menu">
+            <h1>Flaskr</h1>
+            <ul class="reg-log">
+                {% if g.user %}
+                    <li><a href="{{ url_for('site_main.user_page', username=g.user['username']) }}">{{ g.user['username'] }}</a>
+                    <li><a href="{{ url_for('site_auth.logout') }}">Log Out</a>
+                {% else %}
+                    <li><a href="{{ url_for('site_main.home') }}">Home</a></li>
+                    <li><a href="{{ url_for('site_auth.register') }}">Register</a></li>
+                    <li><a href="{{ url_for('site_auth.login') }}">Log in</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+
+        {% block title_variable %}{% endblock %}
+
+        {% block content %}{% endblock %}
+
+        {% for category, message in get_flashed_messages(with_categories=True) %}
+            <div class="flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+
+    </div>
+
+</body>
+
+</html>
